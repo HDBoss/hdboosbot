@@ -73,4 +73,3 @@ async def on_message(message):
                                    f'Capture Card: Elgato 60FPS Capture Card \n'
                                    f'\n'
                                    f'This is my entire setup as of early 2021.```')
-client.run('Nzk3MTgyMTQxNDE4NDM4Njk2.X_ivuQ.pV7ObcAQYV8WSVEUXyGWWR-SC80')
