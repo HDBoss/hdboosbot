@@ -1,0 +1,76 @@
+import discord
+import datetime
+import time
+client = discord.Client()
+@client.event
+async def on_message(message):
+    if message.content.startswith('+info'):
+        await message.channel.send(f'```This is a bot made by HDBoss with a few commands. \n'
+                                   f'+info - what you see here, basically tells you what this bot is about and what the commands are. \n'
+                                   f'+teamshell - tells you the link for Team Shell \n'
+                                   f'+twitch - tells you the link of my twitch \n'
+                                   f'+hdboss - a link to my youtube channel \n'
+                                   f'+spotify - a link to my spotify playlist \n'
+                                   f'+time - gives you the current time of HDBoss \n'
+                                   f'+numberroll - generates a random number between 1 and 69420 \n'
+                                   f'+github - gives you the github link for HDBoss \n'
+                                   f'+setup - shows you my setup for early 2021```')
+    if message.content.startswith('+teamshell'):
+        await message.channel.send(f'```This is a link to the Team Shell website:```\nhttps://makerteams.net/teamshell/%27%27')
+        time.sleep(2)
+        await message.channel.send(f'```And this is a link to their Discord server:```\nhttps://discord.gg/JA2bfQqZNu')
+    if message.content.startswith('+twitch'):
+        await message.channel.send(f'```This is a link to my Twitch channel:```\nhttps://www.twitch.tv/hdboss2020')
+    if message.content.startswith('+hdboss'):
+        await message.channel.send(f'``This is a link to my YouTube channel:```\nhttps://www.youtube.com/channel/UC83F6fvo8JGt4-l2mwmx9og')
+    if message.content.startswith('+spotify'):
+        await message.channel.send(f'```This is a link to my Spotify playlist:```\nhttps://open.spotify.com/playlist/2kUZsiJ50WfPBGrgb8tCkE?si=VwT0d9R2TWGFYDut8SiT2Q')
+    if message.content.startswith('+time'):
+        today = datetime.date.today ()
+        timey = datetime.datetime.today ()
+        await message.channel.send(f'```The current time for HDBoss is:```')
+        await message.channel.send((today.strftime ('```%A, %B %d, %Y```')))
+        await message.channel.send(f'```{timey.hour}:{timey.minute}```')
+    if message.content.startswith('+tts'):
+        msg = message.content
+        msg = msg.split ()
+        del msg[0]
+        result = ""
+        for i in msg:
+            result = result + i + " "
+        await message.channel.send (f'{message.author.mention}: {result}', tts=True)
+    if message.content.startswith('+numberroll'):
+        await message.channel.send(f'https://giphy.com/gifs/rickroll-rick-astley-never-gonna-give-you-up-Vuw9m5wXviFIQ')
+        time.sleep(1)
+        await message.channel.send(f'Never gonna give you up,')
+        time.sleep(1)
+        await message.channel.send(f'Never gonna let you down.')
+    if message.content.startswith('@HDBoss Bot, why did you @ me?'):
+        await message.channel.send(f'Because its what I have to as a bot, {message.author.mention}, okay?')
+    if message.content.startswith('+github'):
+        await message.channel.send(f'Well here it is: https://github.com/HDBoss')
+    if message.content.startswith('+anime'):
+        await message.channel.send(f'My Hero Academia \n'
+                                   f'Black Clover \n'
+                                   f'Attack on Titan \n'
+                                   f'Sword Art Online (in progress)')
+    if message.content.startswith('+setup'):
+        await message.channel.send(f'```This is my complete setup: \n'
+                                   f'\n'
+                                   f'PC: Lenovo 300S-11ISH Type 90D9 \n'
+                                   f'Specs of PC: \n'
+                                   f' CPU: i5-6400 @ 2.712GHz, 4 Cores \n'
+                                   f' GPU Intel HD Graphics 530'
+                                   f' Storage: 665G \n'
+                                   f'Screens: \n'
+                                   f' 17" Dell 1905FP Monitor \n'
+                                   f' 17" Samsung Syncmaster 943pwx Monitor \n'
+                                   f'Keyboard: G213 Prodigy Gaming Keyboard \n'
+                                   f'Mouse: G502 Hero Gaming Mouse \n'
+                                   f'Webcam: C922 Pro HD Webcam \n'
+                                   f'Audio: Logitech H390 Headset \n'
+                                   f'Mic: Blackout Blue Yeti Microphone \n'
+                                   f'Capture Card: Elgato 60FPS Capture Card \n'
+                                   f'\n'
+                                   f'This is my entire setup as of early 2021.```')
+client.run('Nzk3MTgyMTQxNDE4NDM4Njk2.X_ivuQ.pV7ObcAQYV8WSVEUXyGWWR-SC80')
